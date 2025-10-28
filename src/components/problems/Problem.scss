@@ -1,0 +1,150 @@
+.implementations {
+  text-align: start;
+}
+.implementation {
+  font-weight: 600;
+}
+
+.code {
+  text-align: left;
+  padding: 10px 24px;
+  font-size: 14px;
+  background: #000;
+  color: white;
+  border-radius: 8px;
+}
+
+.currency-swap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  &__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+  }
+}
+
+.currency-card {
+  background-color: #fdfdfd;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
+  height: 110px;
+
+  &__title {
+    font-weight: 600;
+    color: #98959f;
+    font-size: 14px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 100px;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  &__bottom {
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  &__section {
+    &--left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  }
+}
+
+.currency-input {
+  color: #444650;
+  font-weight: 600;
+  font-size: 24px;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+
+  &::placeholder {
+    color: #ccc;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.swap-progress {
+  --progress: 0;
+  --transition: none;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #e2e6e9;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+
+  &.loading {
+    cursor: default;
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #4ade80, #22c55e);
+      transform: scaleY(var(--progress));
+      transform-origin: bottom;
+      transition: var(--transition);
+      z-index: 1;
+    }
+  }
+
+  &:hover .swap-action {
+    background-color: #fafafa;
+  }
+
+  &:active .swap-action {
+    background-color: #f4f4f5;
+  }
+}
+
+.swap-action {
+  z-index: 2;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background-color: #fff;
+}
