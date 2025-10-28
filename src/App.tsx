@@ -2,6 +2,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.scss";
 import Wrapper from "./components/problems/Wrapper";
+import { IoIosLink } from "react-icons/io";
+import { REPO_LINK } from "./utils/constant";
 
 function App() {
   return (
@@ -15,6 +17,12 @@ function App() {
         </a>
       </div>
       <div className="title">Vite + React</div>
+      <div className="link-wrapper">
+        <a target="_blank" className="repo-link" href={REPO_LINK}>
+          {`Repo link`}
+          <IoIosLink />
+        </a>
+      </div>
       <Wrapper />
     </>
   );

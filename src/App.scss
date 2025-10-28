@@ -25,6 +25,17 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.link-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.repo-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
